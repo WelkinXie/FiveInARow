@@ -9,5 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface ChessButtonNode : SKSpriteNode
+
 - (instancetype)initWithFlag:(NSInteger)flag location:(CGPoint)location;
+
 @end

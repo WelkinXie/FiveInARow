@@ -9,6 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 @class MyScene;
 @class RestartView;
+
 @protocol RestartViewDelegate <NSObject>
 
 - (void)myScene:(RestartView *)myScene didPressButton:(SKSpriteNode *)button;
@@ -20,4 +21,5 @@
 @property (weak, nonatomic) id <RestartViewDelegate> delegate;
 
 + (instancetype)getInstanceWithSize:(CGSize)size;
+
 @end

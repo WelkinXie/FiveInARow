@@ -29,12 +29,12 @@
 
 - (void)initializeLabel {
     SKSpriteNode *flagNodeWhite = [SKSpriteNode spriteNodeWithImageNamed:WHITECHESS];
-    flagNodeWhite.position = CGPointMake(CGRectGetWidth(self.frame)-70, 70);
+    flagNodeWhite.position = CGPointMake(CGRectGetWidth(self.frame) - 70, 70);
     flagNodeWhite.name = WHITECHESS;
     [self addChild:flagNodeWhite];
     
     SKSpriteNode *flagNodeBlack = [SKSpriteNode spriteNodeWithImageNamed:BLACKCHESS];
-    flagNodeBlack.position = CGPointMake(70, CGRectGetHeight(self.frame)-70);
+    flagNodeBlack.position = CGPointMake(70, CGRectGetHeight(self.frame) - 70);
     flagNodeBlack.name = BLACKCHESS;
     [self addChild:flagNodeBlack];
     
@@ -43,7 +43,7 @@
     whiteRetract.fontSize = 32;
     blackRetract.fontSize = 32;
     whiteRetract.position = CGPointMake(70, 45);
-    blackRetract.position = CGPointMake(self.frame.size.width-70, self.frame.size.height-45);
+    blackRetract.position = CGPointMake(self.frame.size.width - 70, self.frame.size.height - 45);
     blackRetract.zRotation = M_PI;
 //    whiteRetract.text = RETRACT;
 //    blackRetract.text = RETRACT;
@@ -110,14 +110,14 @@
     if (_finished) {
         for (UITouch *touch in touches) {
             CGPoint point = [touch locationInNode:self];
-            NSLog(@"(%f,%f)", point.x, point.y);
-            if (point.x<135&&point.y<125) {
+            NSLog(@"(%f, %f)", point.x, point.y);
+            if (point.x < 135 && point.y < 125) {
                 SKLabelNode *node = (SKLabelNode*)[self childNodeWithName:WHITEREADY];
                 node.text = ALREADY;
                 node = (SKLabelNode*)[self childNodeWithName:BLACKREADY];
                 node.text = START;
                 _whiteReady = YES;
-            } else if (point.x>self.view.frame.size.width-135 && point.y>self.view.frame.size.height-125) {
+            } else if (point.x > self.view.frame.size.width - 135 && point.y > self.view.frame.size.height - 125) {
                 SKLabelNode *node = (SKLabelNode*)[self childNodeWithName:BLACKREADY];
                 node.text = ALREADY;
                 node = (SKLabelNode*)[self childNodeWithName:WHITEREADY];
@@ -139,7 +139,7 @@
     UITouch *touch = [touches anyObject];
     SKSpriteNode *touchNode = (SKSpriteNode*)[self nodeAtPoint:[touch locationInNode:self]];
     if (touchNode == [self childNodeWithName:WHITERETRACT] || touchNode == [self childNodeWithName:BLACKRETRACT]) {
-        _flag = (_flag+1)%2;
+        _flag = (_flag + 1) % 2;
         [self removeChildrenInArray:_lastChessArray];
         [_pointFlagArray removeObjectAtIndex:_currentIndex];
         _canRegret = NO;
@@ -160,7 +160,7 @@
         
         [self checkOver];
         
-        _flag = (_flag+1)%2;
+        _flag = (_flag + 1) % 2;
         _canRegret = YES;
     }
 }
@@ -178,7 +178,7 @@
     [self checkStateOne:15 two:-1];
 }
 
-- (BOOL)checkStateOne:(NSInteger)one two:(NSInteger)two{
+- (BOOL)checkStateOne:(NSInteger)one two:(NSInteger)two {
     NSInteger score = 1;
     for (int i=1; i<5; ++i) {
         if (_currentIndex - one*i + i*two< 0) {
@@ -209,8 +209,8 @@
 
 - (CGPoint)checkPoint:(CGPoint)location {
     NSMutableDictionary *pointDict = [[NSMutableDictionary alloc] init];
-    [pointDict setObject:@0 forKey:LOCATION];
-    [pointDict setObject:@10000 forKey:DISTANCE];
+    pointDict[LOCATION] = @0;
+    pointDict[DISTANCE] = @10000;
     
     for (NSInteger i=0; i<15*15; ++i) {
         CGPoint arrayPoint = [_pointArray[i] CGPointValue];
@@ -218,13 +218,13 @@
         
         if (distance < [[pointDict objectForKey:DISTANCE] doubleValue]) {
             [pointDict removeAllObjects];
-            [pointDict setObject:@(i) forKey:LOCATION];
-            [pointDict setObject:@(distance) forKey:DISTANCE];
+            pointDict[LOCATION] = @(i);
+            pointDict[DISTANCE] = @(distance);
         }
     }
 
-    NSInteger index = [[pointDict objectForKey:LOCATION] integerValue];
-    if ([_pointFlagArray[index] integerValue]==3 && [[pointDict objectForKey:DISTANCE] doubleValue] < 30) {
+    NSInteger index = [pointDict[LOCATION] integerValue];
+    if ([_pointFlagArray[index] integerValue] == 3 && [pointDict[DISTANCE] doubleValue] < 30) {
         location = [_pointArray[index] CGPointValue];
         [_pointFlagArray replaceObjectAtIndex:index withObject:@(_flag)];
         _currentIndex = index;
@@ -270,7 +270,7 @@
         blackLabel.fontColor = [SKColor greenColor];
     } else if (_flag == 1){
         whiteLabel.text = LOSE;
-        blackLabel.text =WIN;
+        blackLabel.text = WIN;
         whiteLabel.fontColor = [SKColor greenColor];
         blackLabel.fontColor = [SKColor redColor];
     } else {
@@ -316,7 +316,7 @@
     [_pointFlagArray removeAllObjects];
     [_chessArray removeAllObjects];
     [self initializePointArray];
-    _flag = (_flag+1)%2;
+    _flag = (_flag + 1) % 2;
 }
 
 - (void)update:(CFTimeInterval)currentTime {
