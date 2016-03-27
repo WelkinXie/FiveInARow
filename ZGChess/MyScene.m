@@ -181,7 +181,7 @@
 - (BOOL)checkStateOne:(NSInteger)one two:(NSInteger)two {
     NSInteger score = 1;
     for (int i=1; i<5; ++i) {
-        if (_currentIndex - one*i + i*two< 0) {
+        if (_currentIndex - one*i + i*two < 0) {
             break;
         }
         if ([_pointFlagArray[_currentIndex - one*i + i*two] integerValue] == _flag) {
@@ -200,7 +200,7 @@
             break;
         }
     }
-    if (score == 5) {
+    if (score > 4) {
         [self endGame];
         return YES;
     }
