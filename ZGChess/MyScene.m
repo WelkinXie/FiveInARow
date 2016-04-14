@@ -166,35 +166,35 @@
 }
 
 - (void)checkOver {
-    if ([self checkStateOne:15 two:0]) {
+    if ([self checkStateHoriz:15 vert:0]) {
         return;
     }
-    if ([self checkStateOne:15 two:1]) {
+    if ([self checkStateHoriz:15 vert:1]) {
         return;
     }
-    if ([self checkStateOne:1 two:0]) {
+    if ([self checkStateHoriz:1 vert:0]) {
         return;
     }
-    [self checkStateOne:15 two:-1];
+    [self checkStateHoriz:15 vert:-1];
 }
 
-- (BOOL)checkStateOne:(NSInteger)one two:(NSInteger)two {
+- (BOOL)checkStateHoriz:(NSInteger)horiz vert:(NSInteger)vert {
     NSInteger score = 1;
     for (int i=1; i<5; ++i) {
-        if (_currentIndex - one*i + i*two < 0) {
+        if (_currentIndex - horiz*i + i*vert < 0) {
             break;
         }
-        if ([_pointFlagArray[_currentIndex - one*i + i*two] integerValue] == _flag) {
+        if ([_pointFlagArray[_currentIndex - horiz*i + i*vert] integerValue] == _flag) {
             ++score;
         } else {
             break;
         }
     }
     for (int i=1; i<5; ++i) {
-        if (_currentIndex + one*i - i*two >= _pointArray.count) {
+        if (_currentIndex + horiz*i - i*vert >= _pointArray.count) {
             break;
         }
-        if ([_pointFlagArray[_currentIndex + one*i - i*two] integerValue] == _flag) {
+        if ([_pointFlagArray[_currentIndex + horiz*i - i*vert] integerValue] == _flag) {
             ++score;
         } else {
             break;
