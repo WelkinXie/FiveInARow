@@ -5,6 +5,8 @@
 //  Created by Welkin on 15-2-19.
 //  Copyright (c) 2015年 wk. All rights reserved.
 //
+//  Github: https://github.com/WelkinXie/FiveInARow
+//
 
 #import "RestartView.h"
 #import "Header.h"
