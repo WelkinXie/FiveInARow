@@ -26,9 +26,9 @@
 #define WIN @"You Win"
 #define LOSE @"You Lose"
 
-#define READY @"ready"
+#define READY @"Ready"
 #define ALREADY @""
-#define START @"start"
+#define START @"Start"
 //#define RETRACT @"regret"
 
 #define RESTART @"restart"

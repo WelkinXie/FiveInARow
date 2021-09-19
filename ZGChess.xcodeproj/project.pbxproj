@@ -239,6 +239,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = wk;
 				TargetAttributes = {
+					251777241A9081F30091DA96 = {
+						DevelopmentTeam = 8GMP7VS667;
+					};
 					2517774C1A9081F30091DA96 = {
 						TestTargetID = 251777241A9081F30091DA96;
 					};
@@ -249,6 +252,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -425,10 +429,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 8GMP7VS667;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZgChess/ZGChess.temp_caseinsensitive_rename-Prefix.pch";
 				INFOPLIST_FILE = "ZgChess/ZGChess.temp_caseinsensitive_rename-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "company.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.welkinx.fiveinarow;
 				PRODUCT_NAME = ZGChess.temp_caseinsensitive_rename;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -440,10 +445,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 8GMP7VS667;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZgChess/ZGChess.temp_caseinsensitive_rename-Prefix.pch";
 				INFOPLIST_FILE = "ZgChess/ZGChess.temp_caseinsensitive_rename-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "company.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.welkinx.fiveinarow;
 				PRODUCT_NAME = ZGChess.temp_caseinsensitive_rename;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
