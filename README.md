@@ -1,9 +1,12 @@
 # Five In A Row / 五子棋
 
-##Intro
+## Intro
 Five in a row game with **Sprite Kit**.
 
-![()](http://7xneqd.com1.z0.glb.clouddn.com/fiveinarow.png)
+Download in App Store: 
+https://apps.apple.com/cn/app/id1586528487
 
-##License
+![./cover.png](./cover.png)
+
+## License
 Released under [__MIT License__](https://github.com/WelkinXie/FiveInARow/blob/master/LICENSE).
