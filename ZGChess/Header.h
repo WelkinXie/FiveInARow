@@ -17,6 +17,8 @@
 #define WHITECHESS @"stone_white"
 #define CHESSBOARD @"chessboard"
 
+#define PAUSE @"pause"
+
 #define BLACKREADY @"black"
 #define WHITEREADY @"white"
 
@@ -36,5 +38,7 @@
 
 #define WHITERETRACT @"whiteRetract"
 #define BLACKRETRACT @"blackRetract"
+
+#define MARGIN_LR 55
 
 #endif

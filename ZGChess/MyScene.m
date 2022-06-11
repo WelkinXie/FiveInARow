@@ -40,12 +40,19 @@
     flagNodeBlack.name = BLACKCHESS;
     [self addChild:flagNodeBlack];
     
+    SKLabelNode *pauseNode = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
+    pauseNode.name = PAUSE;
+    pauseNode.text = PAUSE;
+    pauseNode.fontSize = 32;
+    pauseNode.position = CGPointMake(80, MARGIN_LR);
+    [self addChild:pauseNode];
+    
     SKLabelNode *whiteRetract = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
     SKLabelNode *blackRetract = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
     whiteRetract.fontSize = 32;
     blackRetract.fontSize = 32;
-    whiteRetract.position = CGPointMake(70, 45);
-    blackRetract.position = CGPointMake(self.frame.size.width - 70, self.frame.size.height - 45);
+    whiteRetract.position = CGPointMake(70, MARGIN_LR);
+    blackRetract.position = CGPointMake(self.frame.size.width - 70, self.frame.size.height - MARGIN_LR);
     blackRetract.zRotation = M_PI;
 //    whiteRetract.text = RETRACT;
 //    blackRetract.text = RETRACT;
@@ -113,13 +120,13 @@
         for (UITouch *touch in touches) {
             CGPoint point = [touch locationInNode:self];
             NSLog(@"(%f, %f)", point.x, point.y);
-            if (point.x < 135 && point.y < 125) {
+            if (point.x < 145 && point.y < 125) {
                 SKLabelNode *node = (SKLabelNode*)[self childNodeWithName:WHITEREADY];
                 node.text = ALREADY;
                 node = (SKLabelNode*)[self childNodeWithName:BLACKREADY];
                 node.text = START;
                 _whiteReady = YES;
-            } else if (point.x > self.view.frame.size.width - 135 && point.y > self.view.frame.size.height - 125) {
+            } else if (point.x > self.view.frame.size.width - 145 && point.y > self.view.frame.size.height - 125) {
                 SKLabelNode *node = (SKLabelNode*)[self childNodeWithName:BLACKREADY];
                 node.text = ALREADY;
                 node = (SKLabelNode*)[self childNodeWithName:WHITEREADY];
@@ -135,6 +142,13 @@
             [self showRestartView];
         }
         return;
+    }
+    for (UITouch *touch in touches) {
+        CGPoint point = [touch locationInNode:self];
+        if (point.x < 145 && point.y < 125) {
+            [self showRestartView];
+            return;
+        }
     }
     
     //悔棋
@@ -245,17 +259,17 @@
     _finished = !_finished;
     SKLabelNode *whiteLabel = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
     SKLabelNode *blackLabel = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
-    SKLabelNode *whiteReady = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
-    SKLabelNode *blackReady = [[SKLabelNode alloc] initWithFontNamed:@"Courier"];
+    SKLabelNode *whiteReady = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
+    SKLabelNode *blackReady = [[SKLabelNode alloc] initWithFontNamed:@"Chalkduster"];
     
     whiteLabel.fontSize = 50;
     blackLabel.fontSize = 50;
     whiteReady.fontSize = 32;
     blackReady.fontSize = 32;
-    whiteLabel.position = CGPointMake(self.frame.size.width/2, 45);
-    blackLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height-45);
-    whiteReady.position = CGPointMake(70, 45);
-    blackReady.position = CGPointMake(self.frame.size.width-70, self.frame.size.height-45);
+    whiteLabel.position = CGPointMake(self.frame.size.width/2, MARGIN_LR);
+    blackLabel.position = CGPointMake(self.frame.size.width/2, self.frame.size.height-MARGIN_LR);
+    whiteReady.position = CGPointMake(80, MARGIN_LR);
+    blackReady.position = CGPointMake(self.frame.size.width-80, self.frame.size.height-MARGIN_LR);
     blackLabel.zRotation = M_PI;
     blackReady.zRotation = M_PI;
     
@@ -290,11 +304,13 @@
 
 - (void)changeTurn {
     if (_finished) {
+        [self childNodeWithName:PAUSE].hidden = YES;
         return;
     }
     
     [self childNodeWithName:BLACKRETRACT].hidden = YES;
     [self childNodeWithName:WHITERETRACT].hidden = YES;
+    [self childNodeWithName:PAUSE].hidden = NO;
     
     if (_flag == 1) {
         [self childNodeWithName:WHITECHESS].hidden = YES;

@@ -71,6 +71,8 @@
 		2517776B1A90A5040091DA96 /* ChessButtonNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChessButtonNode.h; sourceTree = "<group>"; };
 		2517776C1A90A5040091DA96 /* ChessButtonNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChessButtonNode.m; sourceTree = "<group>"; };
 		25A369891A90EBE600F26FF6 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		A47972BE2854DF7900C3F9E6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		A47972BF2854DF9B00C3F9E6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				English,
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 2517771C1A9081F30091DA96;
 			productRefGroup = 251777261A9081F30091DA96 /* Products */;
@@ -328,6 +331,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				251777341A9081F30091DA96 /* en */,
+				A47972BF2854DF9B00C3F9E6 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -336,6 +340,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2517773D1A9081F30091DA96 /* Base */,
+				A47972BE2854DF7900C3F9E6 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -429,10 +434,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CURRENT_PROJECT_VERSION = 1.0.1.2;
 				DEVELOPMENT_TEAM = 8GMP7VS667;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZgChess/ZGChess.temp_caseinsensitive_rename-Prefix.pch";
 				INFOPLIST_FILE = "ZgChess/ZGChess.temp_caseinsensitive_rename-Info.plist";
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.welkinx.fiveinarow;
 				PRODUCT_NAME = ZGChess.temp_caseinsensitive_rename;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
@@ -445,10 +452,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CURRENT_PROJECT_VERSION = 1.0.1.2;
 				DEVELOPMENT_TEAM = 8GMP7VS667;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZgChess/ZGChess.temp_caseinsensitive_rename-Prefix.pch";
 				INFOPLIST_FILE = "ZgChess/ZGChess.temp_caseinsensitive_rename-Info.plist";
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.welkinx.fiveinarow;
 				PRODUCT_NAME = ZGChess.temp_caseinsensitive_rename;
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
